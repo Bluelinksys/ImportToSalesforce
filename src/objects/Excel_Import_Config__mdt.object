@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Base_Config__c</fullName>
+        <description>基础设置，如总列数，标头行，数据开始行，是否允许部分更新，要插入数据记录类型设置</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>{
+  &quot;TotalColumns&quot; : &quot;20&quot;,
+  &quot;HeaderRow&quot; : &quot;2&quot;,
+  &quot;StartRow&quot; : &quot;3&quot;,
+  &quot;AllowPartialUpdate&quot; : &quot;True&quot;, 
+   &quot;RecordType&quot; : {&quot;Lead&quot;:&quot;DeveloperName1&quot;,&quot;Contact&quot;:&quot;DeveloperName2&quot;}
+}</inlineHelpText>
+        <label>基础设置</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Columns_Mapping__c</fullName>
+        <description>Excel中列的名称和列(A,B,B....)的对应关系</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>如：
+{
+  &quot;地址&quot; : &quot;D&quot;,
+  &quot;电话&quot; : &quot;C&quot;,
+  &quot;手机&quot; : &quot;B&quot;,
+  &quot;客户名称&quot; : &quot;A&quot;
+}</inlineHelpText>
+        <label>列名映射关系</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DataType_Mapping__c</fullName>
+        <description>Excel中每一列的数据类型设置</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>如：
+{
+  &quot;地址&quot; : &quot;String&quot;,
+  &quot;电话&quot; : &quot;String&quot;,
+  &quot;手机&quot; : &quot;String&quot;,
+  &quot;客户名称&quot; : &quot;String&quot;,
+  &quot;生日&quot; : &quot;Date&quot;,
+  &quot;年龄&quot; : &quot;Decimal&quot;
+}</inlineHelpText>
+        <label>数据类型映射关系</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fields_Mapping__c</fullName>
+        <description>Excel中列和对象之间的字段映射关系</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>如：
+{
+  &quot;地址&quot; : &quot;Address__c&quot;,
+  &quot;电话&quot; : &quot;Phone&quot;,
+  &quot;手机&quot; : &quot;Mobile&quot;,
+  &quot;客户名称&quot; : &quot;Name&quot;
+}</inlineHelpText>
+        <label>字段映射关系</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fields_Required__c</fullName>
+        <description>用于配置Excel中哪些列必需有值</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>如：
+[&quot;客户名称&quot;,&quot;手机&quot;,&quot;电话&quot;,&quot;地址&quot;]</inlineHelpText>
+        <label>必填字段设置</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Limit_Number__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>最多一次导入1000条记录,建议每次200条记录</inlineHelpText>
+        <label>导入数量限制（行）</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lookup_Field_Mapping__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>设置此列LOOUP字段对应到哪个对象的哪个字段</inlineHelpText>
+        <label>字段查找关系设置</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Lookup_Relational_Mapping__c</fullName>
+        <description>用于一条记录创建多条记录时，设置从记录和主记录之间的查找关系</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>如：
+{
+    &quot;Contact&quot; : 
+    {
+        &quot;AccountId&quot;:&quot;Account&quot;
+    },
+    &quot;Opportunity&quot; : 
+    {
+        &quot;AccountId&quot;:&quot;Account&quot;,
+        &quot;Contact__c&quot;:&quot;Contact&quot;
+    }
+}</inlineHelpText>
+        <label>对象查找关系设置</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Page_Title__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>页面显示标题头</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ResourceZipName__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>存放模板文件的静态资源ZIP包的名称</inlineHelpText>
+        <label>模板文件静态资源包名</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Save_Ordering__c</fullName>
+        <description>用于一条记录创建多条记录时，保存数据的先后顺序</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>如：
+[&quot;Account&quot; ,&quot;Contact&quot; ,&quot;Opportunity&quot;]</inlineHelpText>
+        <label>对象保存顺序</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sobject_Columns_Mapping__c</fullName>
+        <description>Excel中每一列数据将要保存在哪一个对象中</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>如：
+{
+  &quot;Lead&quot; : [ &quot;客户名称&quot;, &quot;手机&quot;, &quot;电话&quot;, &quot;地址&quot; ],
+  &quot;Account&quot; : [ &quot;客户名称&quot;, &quot;手机&quot;, &quot;电话&quot;, &quot;地址&quot; ]
+}</inlineHelpText>
+        <label>对象和列对应关系</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Validate_Class__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>实现了ImportValidateInterface接口的验证类</inlineHelpText>
+        <label>验证类名</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>导入配置</label>
+    <listViews>
+        <fullName>View_All</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Page_Title__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>ResourceZipName__c</columns>
+        <columns>Validate_Class__c</columns>
+        <columns>NamespacePrefix</columns>
+        <filterScope>Everything</filterScope>
+        <label>全部</label>
+        <language>zh_CN</language>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>
